@@ -4,6 +4,7 @@ require 'active_support/core_ext'
 
 guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')
+  watch('config/routes.rb')
   watch('config/environment.rb')
   watch(%r{^config/environments/.+\.rb$})
   watch(%r{^config/initializers/.+\.rb$})
@@ -44,4 +45,4 @@ guard 'rspec', :version => 2, :all_after_pass => false, :cli => '--drb' do
                          "spec/requests/#{m[1].singularize}_pages_spec.rb")
     end
 end
-
+``
